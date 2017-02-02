@@ -1,5 +1,5 @@
 # angular2-20170130-1930
-!!!
+!
 ## Что подготовить(или уже знать)
 
 - JavaScript - https://learn.javascript.ru
