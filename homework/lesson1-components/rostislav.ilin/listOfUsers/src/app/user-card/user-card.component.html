@@ -1,0 +1,27 @@
+<div [ngClass]="{row: true, blue: isBlue}" (click)="changeBg()">
+  <div class="col-md-6">
+    <!-- usercard -->
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title pull-left">{{index}} {{user.firstName}} {{user.surname}}</h3>
+        <h3 class="panel-title pull-right" (click)="onDestroy(index)">Удалить</h3>
+        <div class="clearfix"></div>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class=" col-md-9 col-lg-9 ">
+            <table class="table table-user-information">
+              <tbody>
+              <tr><td>Дата рождения</td><td>1976-10-10</td></tr>
+              <tr><td>Пол</td><td>мужской</td></tr>
+              <tr><td>Адрес</td><td>ул. Звенигороская, 47б</td></tr>
+              <tr><td>Email</td><td><a href="mailto:ivanov@mail.ru">ivanov@mail.ru</a></td>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ...usercard -->
+  </div>
+</div>
