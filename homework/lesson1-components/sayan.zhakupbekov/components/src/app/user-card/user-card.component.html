@@ -1,0 +1,32 @@
+<div class="panel panel-info" [ngClass]="{'blue': blue}" *ngIf="show"  (click)="colorBlue()">
+  <div class="panel-heading clearfix">
+    <h3 class="panel-title">{{user.firstName + ' ' + user.surname}}</h3>
+
+    <div class="user-avatar" *ngIf="user.photo">
+      <img [src]="user.photo" alt="" width="50" height="50">
+    </div>
+    <div class="user-avatar" *ngIf="!user.photo">
+      <img src="https://avatanplus.com/files/resources/mid/57d688444f1401571e044ae4.png" alt="" width="50" height="50">
+    </div>
+
+    <button (click)="deleteItem()">Удалить</button>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class=" col-md-12 col-lg-12">
+        <table class="table table-user-information">
+          <tbody>
+          <tr>
+            <td>Страна</td>
+            <td [ngSwitch]="user.country">
+              <span *ngSwitchCase="'ru'">Россия</span>
+              <span *ngSwitchCase="'kz'">Казахстан</span>
+              <span *ngSwitchCase="'ua'">Украина</span>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
