@@ -1,0 +1,12 @@
+.app .list-item .remove {
+  visibility: hidden; }
+.app .list-item .remove:hover {
+  color: red; }
+.app .list-item:hover .remove {
+  visibility: visible; }
+.app .selected {
+  color: blue; }
+.app a {
+  text-decoration: none; }
+
+/*# sourceMappingURL=app.component.css.map */
