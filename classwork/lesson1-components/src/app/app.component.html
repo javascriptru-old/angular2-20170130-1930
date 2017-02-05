@@ -1,0 +1,21 @@
+<h1 [ngClass]="{one: 1==1, two: 1==1}"  [style.color]="myColor">
+  {{name + title}}
+</h1>
+
+<button appLogClick (click)="isShown = !isShown">Make color change</button>
+<button appLogClick (click)="isShown = !isShown">Make color change</button>
+<button appLogClick (click)="isShown = !isShown">Make color change</button>
+
+
+<input #x type="text">
+
+<app-user-card *ngIf="isShown"
+  [user]="myUser" (userChanged)="takesomething($event)">
+</app-user-card>
+
+<ul>
+  <li *ngFor="let item of items">
+    {{item}}
+  </li>
+</ul>
+

@@ -1,0 +1,7 @@
+<div class="container">
+  <app-user-card *ngFor="let user of users; let i = index;"
+                 [user]="user"
+                 [index]="i"
+                 (prepareDestroy)="onDestroy($event)"
+  ></app-user-card>
+</div>
