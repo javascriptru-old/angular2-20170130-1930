@@ -1,0 +1,19 @@
+<div class="panel panel-info" (click)="setBlue()" [class.blue]="blue" *ngIf="show">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{user.surname}} {{user.firstName}}</h3>
+        <button class="removeButton" (click)="remove()">Удалить</button>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class=" col-md-9 col-lg-9 ">
+                <table class="table table-user-information" >
+                    <tbody>
+                    <tr><td>Страна</td><td>{{user.country}}</td></tr>
+                    <tr *ngIf="user.photo"><td>Фото</td>
+                        <img width="50" [src]="user.photo"><td></td>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

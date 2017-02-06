@@ -1,0 +1,5 @@
+<app-user-card
+	*ngFor="let user of users"
+	[user]="user"
+	(onRemoveUser)="removeUser(user)">
+</app-user-card>

@@ -1,0 +1,1 @@
+{"version":3,"file":"user-card.component.js","sourceRoot":"","sources":["user-card.component.ts"],"names":[],"mappings":";;;;;;;AAAA,qBAAkC,eAAe,CAAC,CAAA;AAOlD;IAEE;IAAgB,CAAC;IAEjB,oCAAQ,GAAR;IACA,CAAC;IAVH;QAAC,gBAAS,CAAC;YACT,QAAQ,EAAE,eAAe;YACzB,WAAW,EAAE,4BAA4B;YACzC,SAAS,EAAE,CAAC,2BAA2B,CAAC;SACzC,CAAC;yBAAA;IAQF,wBAAC;AAAD,CAAC,AAPD,IAOC;AAPY,yBAAiB,oBAO7B,CAAA"}

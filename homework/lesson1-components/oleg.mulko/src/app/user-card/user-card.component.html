@@ -1,0 +1,18 @@
+<div class="panel panel-info" [class.clickUser] = "isSelectUser" (click) = "isSelectUser = !isSelectUser">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{user.firstName}} {{user.surname}}</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class=" col-md-9 col-lg-9 ">
+        <table class="table table-user-information">
+          <tbody>
+          <tr><td>Страна</td><td>{{user.country}}</td></tr>
+          <tr><td>Фото</td><td><img [src]="user.photo" alt="Нет фото"></td></tr>
+          <tr><td><button class="button" (click) = "deleteUser()">УДАЛИТЬ!</button></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
