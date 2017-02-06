@@ -1,0 +1,12 @@
+.blue {
+    color: blue;
+}
+
+.panel {
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.removeButton {
+    margin: 10px 0 0 0;
+}
