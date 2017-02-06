@@ -19,7 +19,6 @@ export class UserCardComponent implements OnInit {
   }
 
   delete() {
-    //alert(this.id);
     this.deleteEvent.emit(this.id);
   }
 }
