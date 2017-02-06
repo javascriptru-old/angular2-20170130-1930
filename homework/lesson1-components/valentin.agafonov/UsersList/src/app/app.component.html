@@ -1,0 +1,15 @@
+<br/><br/><br/>
+<div class="container">
+  <div class="row">
+
+
+      <user-card *ngFor="let user of usersList; let userIndex = index;" 
+        [user]="user" 
+        (onSelect)="selectUser(user)" 
+        (onRemove)="removeUser(userIndex)"
+        class="col-md-3">
+      </user-card>
+
+
+  </div>
+</div>
