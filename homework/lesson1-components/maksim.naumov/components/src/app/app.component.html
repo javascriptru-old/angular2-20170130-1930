@@ -1,0 +1,8 @@
+<h1 *ngIf="users.length > 0">
+  Список пользователей:
+</h1>
+<h1 *ngIf="users.length == 0">
+  Пользователей нет.
+</h1>
+<app-user-card *ngFor="let us of users; let i = index;" [user]="us" [id]="i" (deleteEvent)="deleteUser($event)">  
+</app-user-card>
