@@ -1,0 +1,43 @@
+<div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title"> Name Surname
+            <input #name type="text" value="Иванов Иван">
+            
+            </h3>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class=" col-md-9 col-lg-9 ">
+              <table class="table table-user-information">
+                <tbody>
+                <tr><td>Дата рождения</td><td>
+                  <input #birthdate type="date" value="1976-10-10"></td></tr>
+                <tr>
+                  <td>Пол</td>
+                  <td>
+                     <input #gender type="text" value="мужской">
+                  </td>
+                </tr>
+                <tr><td>Адрес</td>
+                    <td>
+                      <input #address type="text" value="ул. Звенигородская, 47б">
+                      </td></tr>
+                <tr><td>Email</td><td>
+                  <input #email type="mail" value="ivanov@mail.ru">
+                  </td></tr>
+                             
+                </tbody>
+              </table>
+              <button (click)="addNewUser(name, birthdate, gender, address, email)">
+                Добавить пользователя</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul #ul >
+        <li #li  *ngFor = "let user of users" [id]="user.id" [class.marked]="false"
+        (click)="changeColor($event.target)">{{user.fullName}}
+          <button (click)="deleteUser(user)">
+                Удалить пользователя</button>
+        </li>
+      </ul>
