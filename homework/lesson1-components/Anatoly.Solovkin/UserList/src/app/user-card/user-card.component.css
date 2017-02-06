@@ -1,0 +1,5 @@
+.deleteBtn {
+    float: right; 
+    color: red; 
+    cursor: pointer;
+}
