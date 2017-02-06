@@ -1,0 +1,63 @@
+$max-width: 1200px;
+$base-top-margin: 20px;
+$max-width-small: 800px;
+
+body {
+	background-color: #F4FBFC;
+}
+
+.align-left {
+	float: left;
+}
+
+.align-right {
+	float: right;
+}
+
+.align-center {
+	text-align: center;
+}
+
+.wrapper {
+	max-width: $max-width;
+	margin: $base-top-margin auto 0 auto;
+}
+
+.wrapper-wo-m {
+	max-width: $max-width;
+	margin: 0 auto;
+}
+
+.wrapper-wo-m-small {
+	max-width: $max-width-small;
+	margin: 0 auto;
+}
+
+.container {
+	&:after {
+		content: '';
+		clear: both;
+		display: table;
+	}
+}
+
+.column {
+	float: left;
+	margin-right: 4%;
+	&:last-child {
+		margin: 0;
+	}
+}
+
+.one    { width: 4.666666%   }
+.two    { width: 13.333333%  }
+.three  { width: 22%         }
+.four   { width: 30.666666%  }
+.five   { width: 39.333333%  }
+.six    { width: 48%         }
+.seven  { width: 56.666667%  }
+.eight  { width: 65.333334%  }
+.nine   { width: 74%         }
+.ten    { width: 82.666667%  }
+.eleven { width: 91.333334%  }
+.twelve { width: 100%        }
