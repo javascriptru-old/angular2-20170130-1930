@@ -4,14 +4,12 @@ import { UserCard } from './user-card.model';
 @Component({
 	selector: 'app-user-card',
 	templateUrl: './user-card.component.html',
-	styleUrls: ['./user-card.component.css'],
-	inputs: ['user'],
-	outputs: ['onRemoveUser']
+	styleUrls: ['./user-card.component.css']
 })
 export class UserCardComponent implements OnInit {
-	user: UserCard;
+	@Input() public user: UserCard;
 	isClicked: boolean;
-	onRemoveUser: EventEmitter<UserCard>;
+	@Output() onRemoveUser: EventEmitter<UserCard>;
 
 	constructor() {
 		this.isClicked = false;
