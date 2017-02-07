@@ -23,6 +23,11 @@ export class AppComponent implements OnInit{
     let index = this.users.indexOf(user);
 
     this.users.splice(index, 1);
+
+    if (this.selectedUser === user) {
+      this.selectedUser = void(0);
+    }
+
   }
 
 }

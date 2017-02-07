@@ -1,5 +1,5 @@
 <!-- usercard -->
-<div class="panel panel-info">
+<div *ngIf="user" class="panel panel-info">
   <div class="panel-heading">
     <h3 class="panel-title">{{user.firstName}} {{user.surname}}</h3>
   </div>
@@ -19,6 +19,15 @@
       </tbody>
     </table>
 
+    <button class="btn btn-danger" (click)="onDelete()">Delete</button>
+
+  </div>
+</div>
+<div *ngIf="!user" class="panel panel-danger">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      Пользователь не найден
+    </h3>
   </div>
 </div>
 <!-- ...usercard -->
