@@ -20,6 +20,11 @@ let letters:Letter[] = [
         author: "Maxim Kirilchuk",
         message: "Some text",
         time: 1486274208436
+    },
+    {
+        author: "Maxim Kirilchuk",
+        message: "5 Some text",
+        time: 1486274208436
     }
 ];
 

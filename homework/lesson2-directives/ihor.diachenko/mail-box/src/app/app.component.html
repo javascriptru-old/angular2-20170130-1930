@@ -5,13 +5,8 @@
     </div><!-- logo -->
 
     <div class="search-bar col-sm-6">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search for...">
-        <span class="input-group-btn">
-              <button class="btn btn-main">
-                <span class="glyphicon glyphicon-search"></span>
-              </button>
-            </span>
+      <div class="input-group" style="width: 100%">
+        <input (input)="onSearch($event.target.value)" type="text" class="form-control" placeholder="Search for...">
       </div><!-- /input-group -->
 
       <span class="arrow caret"></span>
@@ -83,6 +78,7 @@
       </ul>
     </div><!-- sidebar -->
 
-    <app-mail-box></app-mail-box>
+    <app-mail-box [searchValue]="searchValue"></app-mail-box>
+
   </div><!-- mail -->
 </div>

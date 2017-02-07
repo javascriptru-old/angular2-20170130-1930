@@ -6,12 +6,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { MailBoxComponent } from './mail-box/mail-box.component';
 import { TimeAgoPipe } from './mail-box/time-ago.pipe';
+import { SearchPipe } from './mail-box/search.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     MailBoxComponent,
-    TimeAgoPipe
+    TimeAgoPipe,
+    SearchPipe
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {Letter} from "./letter";
 import {letters} from "./letters";
 
@@ -9,6 +9,8 @@ import {letters} from "./letters";
 })
 export class MailBoxComponent implements OnInit {
   letters:Letter[] = letters;
+
+  @Input('searchValue') searchValue: string;
 
   constructor() { }
 

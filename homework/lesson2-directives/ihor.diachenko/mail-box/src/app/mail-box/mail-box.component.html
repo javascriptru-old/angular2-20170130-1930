@@ -1,7 +1,7 @@
 <div class="inbox col-sm-10">
   <ul class="list-unstyled">
 
-    <li *ngFor="let letter of letters" class="email-item row unread">
+    <li *ngFor="let letter of letters | search: searchValue" class="email-item row unread">
 
       <div  class="people col-sm-3">
         <span class="people-names">{{letter.author}}</span>
