@@ -1,0 +1,24 @@
+.app {
+  .list-item {
+    .remove {
+      visibility: hidden;
+    }
+
+    .remove:hover {
+      color: red;
+    }
+  }
+  .list-item:hover {
+    .remove {
+      visibility: visible;
+    }
+  }
+
+  .selected {
+    color: blue;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}

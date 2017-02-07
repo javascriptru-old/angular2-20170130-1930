@@ -1,0 +1,10 @@
+.hightlight {
+	background-color: #E8F3FE;
+}
+
+.delete {
+	background-color: #D9EDF7;
+	border: 1px solid #BCE8F1;
+	border-radius: 3px;
+	padding: 8px 16px;
+}

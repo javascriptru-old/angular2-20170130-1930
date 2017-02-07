@@ -1,0 +1,24 @@
+<div class="w3-row app">
+  <div class="w3-quarter">
+    <div class="w3-row w3-container w3-green">
+      <h2>Участники:</h2>
+    </div>
+    <div class="w3-row w3-container" *ngFor="let user of usersData; let number = index">
+      <div class="w3-row" [ngClass]="{'selected': user === selectedUser}">
+        <a href="#" (click)="selectedUser = user">
+          <h4 class="list-item">{{user.surname}} {{user.firstName}}
+            <span class="remove" (click)="removeUser(number)">&times;</span>
+          </h4>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="w3-threequarter">
+    <div class="w3-row w3-container w3-indigo">
+      <h2>Карточка пользователя:</h2>
+    </div>
+    <div class="w3-row" style="width: 200px; margin: 100px auto;">
+      <app-user-card *ngIf="selectedUser" [user]="selectedUser"></app-user-card>
+    </div>
+  </div>
+</div>
