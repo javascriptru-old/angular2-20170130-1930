@@ -110,4 +110,7 @@ export class AppComponent {
   public title: string = 'Карточка участников курса';
   public users: Array<any> = users;
 
+  deleteItem(num) {
+    this.users.splice(num, 1);
+  }
 }
