@@ -1,0 +1,7 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <app-user-card *ngFor="let user of users" [user]="user" (onSelect)="selectUser($event)" (onDelete)="deleteUser($event)">Loading...</app-user-card>
+    </div>
+  </div>
+</div>
