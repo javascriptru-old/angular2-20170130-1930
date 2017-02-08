@@ -1,0 +1,6 @@
+
+<app-user-card *ngFor = "let user of usersList"
+               [user] = "user"
+               (deleteUser) = "deleteUser($event)">
+
+</app-user-card>

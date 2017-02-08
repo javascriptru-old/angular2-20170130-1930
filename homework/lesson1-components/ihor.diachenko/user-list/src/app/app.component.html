@@ -13,8 +13,8 @@
       </ul>
     </div>
 
-    <div class="col-xs-12 col-md-6" *ngIf="selectedUser">
-      <app-user-card [user]="selectedUser"></app-user-card>
+    <div class="col-xs-12 col-md-6">
+      <app-user-card [user]="selectedUser" (userDeleted)="onDelete($event)"></app-user-card>
     </div>
   </div>
 </div>

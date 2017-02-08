@@ -1,0 +1,12 @@
+<div class="w3-card-4 w3-row" style="width: 200px">
+  <div class="w3-row w3-border-bottom w3-cyan" style="height: 150px; background: no-repeat center"
+       [style.background-image]="'url(' + (user.photo ? user.photo : 'app/user-card/default-user.svg') + ')'">
+  </div>
+  <div class="w3-row w3-center w3-indigo">
+    <div class="w3-row w3-xlarge w3-padding">{{user.surname}}</div>
+    <div class="w3-row w3-xlarge w3-padding">{{user.firstName}}</div>
+    <div class="w3-row w3-padding">
+      <img class="w3-image w3-border" style="height: 20px" [src]="'app/user-card/flags/' + user.country  + '.svg'">
+    </div>
+  </div>
+</div>
