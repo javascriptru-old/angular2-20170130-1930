@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <!-- usercard -->
+      <!--<div *ngIf="!isListEmpty">Список пользователей пуст</div>-->
+      <!--Не понял, как это проверить-->
+      <div class="panel panel-info" *ngFor="let user of users">
+        <div class="panel-heading">
+          <h3 class="panel-title">{{user.firstName}} {{user.surname}}</h3>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class=" col-md-9 col-lg-9">
+              <table class="table table-user-information">
+                <tbody>
+                  <tr><td width="50%">First Name</td><td>{{user.firstName}}</td></tr>
+                  <tr><td>Last Name</td><td>{{user.surname}}</td></tr>
+                  <tr><td>Country</td><td>{{user.country}}</td></tr>
+                  <tr><td>Photo</td><td><img src="{{user.photo ? user.photo : 'http://www.freeiconspng.com/uploads/no-image-icon-10.png'}}" width="50" /></td></tr>
+                  <tr><td class="pointer" (click)="deleteUser(user)">Delete</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ...usercard -->
+    </div>
+  </div>
+</div>
