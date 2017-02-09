@@ -1,3 +1,9 @@
-<h1>
-  {{title}}
-</h1>
+<h1 class="app-name">Приложение "Почтовый ящик"</h1>
+<input
+    type="text"
+    (input)="search($event.target.value)"
+    class="search">
+<app-mail-box
+    [letters]="letters"
+    [searchFilter]="searchFilter">
+</app-mail-box>

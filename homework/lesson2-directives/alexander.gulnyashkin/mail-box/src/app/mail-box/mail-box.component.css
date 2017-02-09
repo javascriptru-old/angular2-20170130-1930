@@ -1,0 +1,15 @@
+.mail-box {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0 40px;
+    justify-content: space-between;
+}
+.letter {
+    flex: 1 1 400px;
+    margin: 20px;
+}
+.empty {
+    color: #fff;
+    text-align: center;
+    font-size: 2rem;
+}
