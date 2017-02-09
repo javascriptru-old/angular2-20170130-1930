@@ -1,0 +1,17 @@
+<input type="text" 
+       class="form-control query" 
+       placeholder="Введите запрос"
+       #queryInput
+       (input)="setQuery(queryInput.value)">
+<div class="panel panel-default"
+      *ngFor="let letter of letters | filterLetters:query">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{letter.title}}</h3>
+  </div>
+  <div class="panel-body">{{letter.text}}</div>
+  <div class="panel-footer">
+    {{letter.date | letterTime}}
+    {{letter.date | letterTime | i18nPlural: messageMapping}}
+    назад
+  </div>
+</div>
