@@ -9,6 +9,7 @@ import { emails } from "../common";
 })
 export class MailBoxComponent implements OnInit {
     public eMails: Email[];
+    public filterValue: string = "";
     
     @Output() onFilter: EventEmitter<string> = new EventEmitter();
 
@@ -19,7 +20,7 @@ export class MailBoxComponent implements OnInit {
     ngOnInit() {
   }
 
-    public filter(value: string): void {        
+    public filterMail(value: string): void {        
         this.onFilter.emit(value);
     }
 
