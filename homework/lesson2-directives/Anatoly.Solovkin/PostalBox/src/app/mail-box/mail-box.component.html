@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="filter-panel">
+      <app-mail-filter (onFilter)="searchedValue = $event"></app-mail-filter>
+    </div>
+    <div *ngIf="mails | filterMails:searchedValue | arrayNotEmpty">
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let mail of mails | filterMails:searchedValue">
+          <app-mail [mail]="mail"></app-mail>
+        </li>
+      </ul>      
+    </div>
+    <div *ngIf="!(mails | filterMails:searchedValue | arrayNotEmpty)" class="alert alert-warning" role="alert">
+      <span>Письма не найдены</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
