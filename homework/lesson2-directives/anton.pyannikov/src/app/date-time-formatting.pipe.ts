@@ -19,21 +19,21 @@ export class DateTimeFormattingPipe implements PipeTransform {
 
     let timeUnits: TimeUnit[] = [];
 
-    timeUnits[timeUnits.length] = {
+    timeUnits.push({
       value: 1000, description: 'сек.'
-    };
-    timeUnits[timeUnits.length] = {
+    });
+    timeUnits.push({
       value: timeUnits[timeUnits.length - 1].value * 60, description: 'мин.'
-    };
-    timeUnits[timeUnits.length] = {
+    });
+    timeUnits.push({
       value: timeUnits[timeUnits.length - 1].value * 60, description: 'ч.'
-    };
-    timeUnits[timeUnits.length] = {
+    });
+    timeUnits.push({
       value: timeUnits[timeUnits.length - 1].value * 24, description: 'дн.'
-    };
-    timeUnits[timeUnits.length] = {
+    });
+    timeUnits.push({
       value: timeUnits[timeUnits.length - 1].value * 7, description: 'нед.'
-    };
+    });
 
     let tmp: number;
 
