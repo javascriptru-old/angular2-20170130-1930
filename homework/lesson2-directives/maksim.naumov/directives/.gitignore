@@ -7,6 +7,11 @@
 # dependencies
 /node_modules
 
+# pull-request
+.editorconfig
+.gitignore
+/e2e/*
+
 # IDEs and editors
 /.idea
 .project
