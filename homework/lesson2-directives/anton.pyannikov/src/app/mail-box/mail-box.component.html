@@ -1,0 +1,35 @@
+<div class="row expanded align-center">
+  <div class="column large-4">
+    <div class="row">
+      <div class="small-12 column app-indigo text-center">
+        <h1>Список писем</h1>
+      </div>
+      <div class="column">
+        <div class="input-group app-margin-top-10">
+          <span class="input-group-label fi-magnifying-glass"></span>
+          <input class="input-group-field app-width-expanded text-center" placeholder="Строка поиска..." (input)="searchValue = $event.target.value">
+        </div>
+      </div>
+    </div>
+    <div class="row app-border-topbottom" style="max-height: 80vh; overflow-y: auto">
+      <div class="column">
+        <div class="row app-mails-list-item"
+             *ngFor="let mail of mailsList | mailFilterBy:{field: 'title', value: searchValue}, let lastIndex = last">
+          <div class="column small-12 app-padding-left-10 app-border-bottom">
+            <a (click)="selectedMail = mail">
+              <h3>{{mail.title}}</h3>
+            </a>
+          </div>
+          <div class="column small-12 app-padding-left-10">
+            <div class="row">
+              <div class="column">
+                <h5>{{mail.whenReceived | dateTimeFormatting}}</h5></div>
+              <div class="column">
+                <h5>От: {{mail.from}}</h5></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
