@@ -1,4 +1,4 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-user-card',
@@ -8,18 +8,19 @@ import {Component, OnInit, Input} from '@angular/core';
 export class UserCardComponent implements OnInit {
 
   @Input('user') user;
+  @Input('idx') idx;
+  @Output() deleteEvent: EventEmitter<number> = new EventEmitter();
 
   constructor() {
   }
 
-  show: boolean = true;
   blue: boolean = false;
 
   ngOnInit() {
   }
 
-  deleteItem() {
-    this.show = false;
+  sendItemNum(num) {
+    this.deleteEvent.emit(num);
   }
 
   colorBlue() {

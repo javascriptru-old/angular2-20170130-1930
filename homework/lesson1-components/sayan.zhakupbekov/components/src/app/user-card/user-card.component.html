@@ -1,4 +1,5 @@
-<div class="panel panel-info" [ngClass]="{'blue': blue}" *ngIf="show"  (click)="colorBlue()">
+<div class="panel panel-info" [ngClass]="{'blue': blue}" (click)="colorBlue()">
+<!--<div class="panel panel-info" [ngClass]="{'blue': blue}" *ngIf="show"  (click)="colorBlue()">-->
   <div class="panel-heading clearfix">
     <h3 class="panel-title">{{user.firstName + ' ' + user.surname}}</h3>
 
@@ -9,7 +10,7 @@
       <img src="https://avatanplus.com/files/resources/mid/57d688444f1401571e044ae4.png" alt="" width="50" height="50">
     </div>
 
-    <button (click)="deleteItem()">Удалить</button>
+    <button (click)="sendItemNum(idx)">Удалить</button>
   </div>
   <div class="panel-body">
     <div class="row">

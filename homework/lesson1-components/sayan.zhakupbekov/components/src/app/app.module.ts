@@ -11,7 +11,6 @@ import { UserCardsWrapperComponent } from './user-cards-wrapper/user-cards-wrapp
   declarations: [
     AppComponent,
     UserCardComponent,
-    UserCardsWrapperComponent,
   ],
   imports: [
     BrowserModule,
