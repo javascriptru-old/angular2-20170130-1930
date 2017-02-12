@@ -1,0 +1,4 @@
+﻿<input type="number" [(ngModel)]="baseAmount">
+<app-currency-select [(selected)]="baseCurrency"></app-currency-select>
+<strong>{{targetAmount | roundTo: 2}}</strong>
+<app-currency-select [(selected)]="targetCurrency"></app-currency-select>   
