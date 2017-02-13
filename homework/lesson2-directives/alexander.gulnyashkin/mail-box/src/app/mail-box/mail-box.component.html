@@ -1,0 +1,12 @@
+<div class="mail-box"
+    *ngIf="letters">
+    <app-letter
+        class="letter"
+        *ngFor="let letter of letters | filter:searchFilter"
+        [letter]="letter">
+    </app-letter>
+</div>
+<div
+    *ngIf="isEmpty()">
+    <p class="empty">Нет писем</p>
+</div>

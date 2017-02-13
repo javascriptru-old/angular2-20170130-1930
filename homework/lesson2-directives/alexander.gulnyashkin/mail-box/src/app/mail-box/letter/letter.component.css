@@ -1,0 +1,55 @@
+.letter {
+    max-width: 600px;
+    min-width: 400px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+}
+
+.letter__header {
+    padding: 20px;
+    border-bottom: 20px solid #F6F6F6;
+}
+
+.letter__header span:first-child {
+    float: left;
+}
+.letter__header span:last-child {
+    float: right;
+    color: #404040;
+    font-weight: bold;
+}
+
+.letter__from {
+    margin-bottom: 10px;
+}
+
+.letter__name,
+.letter__date,
+.letter__email {
+    font-size: 1.2rem;
+}
+
+.letter__date {
+    text-align: right;
+}
+
+.letter__email {
+    padding: 5px 0 15px 0;
+}
+
+.letter__name:after,
+.letter__email:after,
+.letter__date:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.letter__date-full {
+    font-size: 1rem;
+    color: #BFBFBF;
+}
+
+.letter__body {
+    padding: 20px;
+}

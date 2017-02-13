@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="input-group mb-5">
+      <span class="input-group-addon" id="sizing-addon2">Фильтр</span>
+      <input type="text" class="form-control" placeholder="Введите текст" aria-describedby="sizing-addon2" (input)="search($event.target.value)">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <!-- Перечисление писем -->
+      <div class="card mb-3" *ngFor="let letter of letters | textFilter:searchString">
+        <div class="card-header">
+          <p>От кого: {{letter.from}}</p>
+          <p>Получено: {{letter.receiptTime | receipt}}</p>
+        </div>
+        <div class="card-block">
+          <p>{{letter.message}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
