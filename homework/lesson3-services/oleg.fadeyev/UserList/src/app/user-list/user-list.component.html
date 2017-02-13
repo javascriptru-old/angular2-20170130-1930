@@ -1,0 +1,11 @@
+﻿<div class="container">
+    <div class="row">
+        <div *ngIf="usrsFound()" class="col-md-6">
+            <app-user-card *ngFor="let user of this.usrSvc.usersLst" [user]="user" (onSelect)="selUser($event)" (onGetInfo)="getUser($event)"></app-user-card>
+        </div>
+        <div *ngIf="!usrsFound()" class="alert alert-warning" role="alert">
+            <span>Информация о пользователях не найдена</span>
+        </div>
+    </div>
+</div>
+
