@@ -1,0 +1,22 @@
+
+
+<div class="container">
+  <h1 class="text-center">{{title}}</h1>
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <ul class="list-group">
+        <li *ngFor="let user of users" class="list-group-item active" (click)="onSelect(user)"
+            [class.active]="user === selectedUser">
+          {{user.firstName}}
+          <span class="label label-danger pull-right" (click)="onDelete(user)">Delete</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+      <app-user-card [user]="selectedUser" (userDeleted)="onDelete($event)"></app-user-card>
+    </div>
+  </div>
+</div>
+
+
