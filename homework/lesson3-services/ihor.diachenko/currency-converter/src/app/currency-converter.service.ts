@@ -23,7 +23,7 @@ export class CurrencyConverterService{
         .map((res: Response) => { let rates = res.json().rates; return rates[destinationUnit];})
   }
 
-  convert(sourceUnit:string, destinationUnit:string, amount:number) {
+  convert(sourceUnit:string, destinationUnit:string, amount:number): Observable<number> {
 
     return this.getRate(sourceUnit,destinationUnit)
         .map((rate: number) => amount * rate);
