@@ -18,6 +18,6 @@ export class CurrencyConverterService {
 
   convert(srcType: string, destType: string, srcValue: number): Observable<number> {
     return this._http.get(`${this.basedOnUrl}${srcType}`)
-      .map(result => srcType !== destType ? ((result.json().rates[destType] * srcValue).toFixed(2)) : srcValue);
+      .map(result => srcType !== destType ? +((result.json().rates[destType] * srcValue).toFixed(2)) : srcValue);
   }
 }
