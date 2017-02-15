@@ -16,6 +16,17 @@
           <td>Страна</td><td>{{user.country}}</td>
         </tr>
 
+        <tr>
+          <td rowspan="5">Вероятные github аккаунты</td>
+          <td>
+            <table>
+              <tr *ngFor="let account of githubAccounts">
+                <td>{{account.login}}</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
       </tbody>
     </table>
 

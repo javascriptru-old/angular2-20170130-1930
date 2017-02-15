@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { UserCardComponent } from './user-card/user-card.component';
+import {UsersService} from "./users.service";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { UserCardComponent } from './user-card/user-card.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

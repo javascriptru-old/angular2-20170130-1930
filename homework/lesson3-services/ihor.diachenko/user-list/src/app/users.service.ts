@@ -13,10 +13,23 @@ export class UsersService {
 
   getUsers(): Observable<User[]> {
     return this.http.get(this.usersUrl)
-        .map(this.extractData);
+        .map(this.extractUsersData);
   }
 
-  private extractData(res: Response) {
+  getGithubAccounts(firstname:string): Observable<any[]> {
+    let githubUrl = `https://api.github.com/search/users?q=${firstname}&page=1&per_page=5`;
+
+    return this.http.get(githubUrl)
+        .map(this.extractGithubData);
+  }
+
+  private extractGithubData(res: Response) {
+    let body = res.json();
+
+    return body.items || { };
+  }
+
+  private extractUsersData(res: Response) {
     let body = res.json();
 
     return body || { };
