@@ -1,0 +1,23 @@
+<div class="container">
+
+  <form>
+    <div class="form-group">
+      <label for="amount">Введите сумму:</label>
+      <input type="number" class="form-control" id="amount" min="0" #amount>
+    </div>
+    <div class="form-group">
+      <label>Выберите валюту:</label>
+      <app-converter-select [units]="units" (onSelect)="setSourceUnit($event)"></app-converter-select>
+    </div>
+    <div class="form-group">
+      <label>Конвертировать в:</label>
+      <app-converter-select [units]="units" (onSelect)="setDestinationUnit($event)"></app-converter-select>
+    </div>
+    <div class="form-group">
+      <label for="result">Результат:</label>
+      <input type="number" class="form-control" id="result" readonly="readonly" value="{{result}}">
+    </div>
+    <button type="submit" class="btn btn-default" (click)="convert(amount.value)">Submit</button>
+  </form>
+
+</div>

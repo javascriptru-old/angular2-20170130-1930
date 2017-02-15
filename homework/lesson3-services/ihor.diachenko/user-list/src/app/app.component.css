@@ -1,0 +1,15 @@
+h1 {
+    margin-bottom: 40px;
+}
+
+li {
+    cursor: pointer;
+}
+
+li .label.label-danger {
+    margin-top: 2px;
+}
+
+li .label.label-danger:hover {
+    background-color: darkred;
+}
