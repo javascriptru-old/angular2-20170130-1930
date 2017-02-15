@@ -1,0 +1,39 @@
+<div [class.panel-primary]="user.selected" [class.panel-info]="!user.selected" class="panel">
+  <div class="panel-heading" (click)="select($event)">
+    <h3 class="panel-title">{{user.surname}} {{user.firstName}}
+        <span class="glyphicon glyphicon-remove deleteBtn" aria-hidden="true" (click)="delete($event)"></span>
+    </h3>
+  </div>
+  <div class="panel-body" (click)="select($event)" >
+    <div class="row">
+      <div class="col-md-9 col-lg-9">
+        <table class="table table-user-information">
+          <tbody>
+            <tr>
+              <td>Страна</td>
+              <td>{{user.country}}</td>
+            </tr>
+            <tr>
+              <td>Фото</td>
+              <td>
+                <img class="img-responsive col-xs-12 col-sm-12 col-md-12 col-lg-12" *ngIf="user.hasPhoto()" src="{{user.photo}}" />
+                <span *ngIf="!user.hasPhoto()">Фото отсутствует</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Вероятные GitHub аккаунты</td>
+              <td>
+                <ul class="list-group" *ngIf="user.hasGitHubAccounts()">
+                  <li *ngFor="let gitHubAccount of user.gitHubAccounts" class="list-group-item">{{gitHubAccount.login}}</li>
+                </ul>
+                <div *ngIf="!user.hasGitHubAccounts()" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-warning" role="alert">
+                  <span>GitHub аккаунты не найдены</span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

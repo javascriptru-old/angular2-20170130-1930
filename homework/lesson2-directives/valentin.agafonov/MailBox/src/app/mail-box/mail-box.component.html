@@ -1,0 +1,20 @@
+
+
+<div class="row">
+  <div class="col s6">
+    <h2>Inbox</h2>
+  </div>
+  <div class="col s6 input-field">
+    <input type="text" [(ngModel)]="searchSubstr" placeholder="search letters"/>
+  </div>
+</div>
+
+<table class="highlight">
+  <tbody>
+    <tr *ngFor="let letter of (letters | filterBySubstr:searchSubstr | sortByTime)">
+      <td>{{ letter.from }}</td>
+      <td>{{ letter.title }}</td>
+      <td class="right-align">{{ letter.time | timeFromNow }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,9 @@
+<ul>
+  <li *ngFor="let letter of letters | searchSubstring:word"  >
+  
+    Sender: {{letter.sender}} <br>
+    Text: {{letter.text}} <br>
+    Date: {{ letter.time | date }} {{ letter.time | timeAgoCount }} 
+    
+  </li>
+</ul>

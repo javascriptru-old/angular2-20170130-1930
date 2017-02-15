@@ -1,0 +1,22 @@
+<div class="inbox col-sm-10">
+  <ul class="list-unstyled">
+
+    <li *ngFor="let letter of letters | search: searchValue" class="email-item row unread">
+
+      <div  class="people col-sm-3">
+        <span class="people-names">{{letter.author}}</span>
+      </div><!-- people -->
+
+      <div class="message col-sm-7">
+        <div class="clipper">
+          <p>{{letter.message}}</p>
+        </div>
+      </div><!-- message -->
+
+      <div class="div col-sm-2">
+        <div class="pull-right">{{letter.time | timeAgo}}</div>
+      </div><!-- div -->
+    </li>
+
+  </ul>
+</div><!-- inbox -->
