@@ -1,0 +1,17 @@
+<div class="row expanded align-center">
+  <div class="small-6 column">
+    <button class="button primary expanded" (click)="refreshData()">
+      Обновить данные
+    </button>
+  </div>
+</div>
+<div class="row expanded align-center">
+  <div *ngIf="!users || !users.length" class="small-6 medium-4 large-2 column text-center">
+    <h1>Список пуст</h1>
+  </div>
+
+  <div class="small-6 medium-4 large-2 column" *ngFor="let user of users; let userIndex = index">
+    <app-user-card [user]="user" (removeUser)="removeUser(userIndex)"></app-user-card>
+  </div>
+</div>
+
