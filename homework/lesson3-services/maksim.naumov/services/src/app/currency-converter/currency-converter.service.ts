@@ -11,13 +11,8 @@ export class CurrencyConverterService {
   tmp: Object;
 
   private getRate(base: string, target: string): Observable<any> {
-    return this._http.get(`http://api.fixer.io//latest?base=${base}&symbols=${target}`)    
-    .map(data => {
-      return data.json().rates;
-    })
-    .map(data => {
-      return data[target];
-    })
+    return this._http.get(`http://api.fixer.io//latest?base=${base}&symbols=${target}`)
+    .map(data => data.json().rates[target])
   }
 
   convert(from: string, to: string, count: number): Observable<any> {

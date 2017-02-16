@@ -11,20 +11,18 @@ export class ExchangeService {
     constructor(private _http: Http) {
     }
 
-    getExchangeRate(baseCurrency: string, targetCurrency: string): number {        
+    getExchangeRate(baseCurrency: string, targetCurrency: string): number {
         if (baseCurrency != this.BaseCurrency) {
             this.BaseCurrency = baseCurrency;
             this.getRates(this.BaseCurrency);
         }
         if (baseCurrency === targetCurrency) return 1;
-        return (this.currRates) ? this.currRates[targetCurrency] : 1;        
+        return (this.currRates) ? this.currRates[targetCurrency] : 1;
     }
 
     getRates(bc: string)
-    {        
-        let o = this._http.get('http://api.fixer.io/latest?base=' + bc);        
-        o.subscribe((data: any) => {
-            this.currRates = JSON.parse(data._body).rates;
-        });      
+    {
+        return this._http.get('http://api.fixer.io/latest?base=' + bc)
+        .map(data => JSON.parse(data._body).rates);
     }
 }

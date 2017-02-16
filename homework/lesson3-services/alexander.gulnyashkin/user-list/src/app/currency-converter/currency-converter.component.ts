@@ -22,7 +22,6 @@ export class CurrencyConverterComponent implements OnInit {
                 this.currPair = this.rates[0].name;
             })
     }
-
     /**
      * Меняет пару валют
      */

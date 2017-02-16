@@ -21,7 +21,7 @@ export class UserService {
     public getUsers(): Observable<UserCard[]> {
         return this._requestUsers()
             .flatMap((users) => Observable.from(users))
-            .delay(1000)
+            .delayTime(1000)
             .flatMap((user: UserCard) => {
                 return this._requestGithubs(user);
             })
