@@ -1,0 +1,11 @@
+<div class="user-card">
+    <p class="user-card__name">{{user.firstName}} {{user.surname}}, {{user.country}}</p>
+    <img class="user-card__img" *ngIf="user.photo" [src]="user.photo" alt="" width="70" height="70">
+    <p class="user-card__profiles">Возможные Github профили:</p>
+    <ul *ngIf="user.profiles">
+        <li *ngFor="let profile of user.profiles">
+            <a [href]="profile"></a>
+        </li>
+    </ul>
+    <p *ngIf="!user.profiles">Не найдено.</p>
+</div>

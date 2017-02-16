@@ -1,0 +1,19 @@
+<div class="currency-converter">
+    <div class="currency-converter__wrapper">
+        <select class="currency-converter__select"
+                (change)="changeCurrency($event.target.value)">
+            <option *ngFor="let rate of rates"
+                    [value]="rate.name">
+                {{rate.name}}
+            </option>
+        </select>
+        <input (input)="convertCurrency($event.target.value)"
+                type="text"
+                class="currency-converter__input">
+        <span class="currency-converter__text">{{currPair?.slice(0, 3)}} В</span>
+        <div class="currency-converter__result">
+            {{result}}
+        </div>
+        <span class="currency-converter__text">{{currPair?.slice(4)}}</span>
+    </div>
+</div>
