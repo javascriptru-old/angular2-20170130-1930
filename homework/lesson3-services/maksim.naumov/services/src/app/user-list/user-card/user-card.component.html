@@ -1,0 +1,25 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <div class="row justify-content-between">
+      <div class="col-xs-2">
+        <h3 class="panel-title">{{user.firstName}} {{user.surname}}</h3>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class=" col-md-9 col-lg-9 ">
+        <table class="table table-user-information">
+          <tbody>
+          <tr><td>Страна</td><td>{{user.country}}</td></tr>
+          <tr *ngIf="user.photo != null"><td>Фото</td>
+            <td>
+              <img src="{{user.photo}}" class="img-rounded" width="70" height="50">
+            </td>   
+          </tr>     
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

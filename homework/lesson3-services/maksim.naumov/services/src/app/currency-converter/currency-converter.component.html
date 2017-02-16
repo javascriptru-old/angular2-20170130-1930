@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <label for="from">Из:</label>
+                <select class="form-control" id="from" [(ngModel)]="from">
+                    <option value="RUB">Рубль</option>
+                    <option value="EUR">Евро</option>
+                    <option value="USD">Доллар</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="to">В:</label>
+                <select class="form-control" id="to" [(ngModel)]="to">
+                    <option value="RUB">Рубль</option>
+                    <option value="EUR">Евро</option>
+                    <option value="USD">Доллар</option>
+                </select>
+            </div>
+        </div>        
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="count">Количество: </label>
+            <input type="number" name="count" value="" id="count" [(ngModel)]="count">
+            <button type="button" (click)="calculate()">Вычислить</button>
+            <label for="res">Результат: </label>
+            <p id="res">{{result}}</p>
+        </div>
+    </div> 
+</div>
