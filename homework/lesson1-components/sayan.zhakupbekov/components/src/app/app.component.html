@@ -1,0 +1,18 @@
+<h1>
+  {{title}}
+</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+
+      <app-user-card
+        *ngFor="let user of users; let idx = index"  [user]="user" [idx]="idx" (deleteEvent)="deleteItem($event)" >
+
+      </app-user-card>
+
+    </div>
+  </div>
+</div>
+
+

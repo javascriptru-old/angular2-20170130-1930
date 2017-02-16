@@ -1,0 +1,9 @@
+.mail-subject {
+    color: gray;
+}
+.receiptTime {
+    text-align: right;
+}
+.filterPanel{
+    padding: 10px 0 10px 0;
+}

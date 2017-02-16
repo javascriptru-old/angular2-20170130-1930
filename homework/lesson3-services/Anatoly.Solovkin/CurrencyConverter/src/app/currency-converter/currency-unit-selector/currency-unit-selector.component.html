@@ -1,0 +1,4 @@
+<select #value class="form-control" (change)="select($event.target.value)">
+  <option value=""></option>
+  <option *ngFor="let unit of availableUnits" value="{{unit}}">{{unit}}</option>
+</select>

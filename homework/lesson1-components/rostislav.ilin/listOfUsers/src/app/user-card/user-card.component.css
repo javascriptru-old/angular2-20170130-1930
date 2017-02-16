@@ -1,0 +1,8 @@
+.blue {
+  background: rgba(0, 0, 255, 0.61);
+}
+.row {
+  cursor: pointer;
+  padding-top: 20px;
+  margin-top: 10px;
+}

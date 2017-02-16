@@ -1,0 +1,4 @@
+﻿<select [ngModel]="selected" (ngModelChange)="onSelect($event)">
+    <option *ngFor="let currency of supportedCurrencies" [value]="currency">{{currency}}</option>
+</select>
+<strong>{{selected}}</strong>

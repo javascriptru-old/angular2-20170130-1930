@@ -1,0 +1,40 @@
+<div class="row expanded align-center" style="height: 100vh">
+  <div class="small-3 column align-self-middle">
+    <div class="row align-center card">
+      <div class="column app-margin-top-10">
+        <button class="button primary expanded" (click)="refreshCurrencyNames()">Обновить список валют</button>
+      </div>
+      <form class="small-12 column">
+        <div class="row">
+          <div class="column">
+            <input #currencyValue type="text" maxlength="25" placeholder="Количество валюты">
+          </div>
+          <div class="column shrink">
+            <select #srcCurrency>
+              <option *ngFor="let name of currencyNames" [value]="name" selected="{{name == 'RUB' ? 'selected' : ''}}">
+                {{name}}
+              </option>
+            </select>
+          </div>
+          <div class="small-12 column">
+            <div class="input-group">
+              <span class="input-group-label">Конвертировать в:</span>
+              <select #destCurrency class="input-group-field">
+                <option *ngFor="let name of currencyNames" [value]="name"
+                        selected="{{name == 'USD' ? 'selected' : ''}}">
+                  {{name}}
+                </option>
+              </select>
+              <div class="input-group-button button alert"
+                   (click)="convertCurrency(srcCurrency.value, destCurrency.value, currencyValue.value)">Результат
+              </div>
+            </div>
+          </div>
+          <div class="small-12 column text-center app-word-wrapping" *ngIf="conversionResult">
+            <h2><span class="app-indigo-color">{{currencyValue.value}}</span> {{srcCurrency.value}} = <span class="app-indigo-color">{{conversionResult}}</span> {{destCurrency.value}}</h2>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

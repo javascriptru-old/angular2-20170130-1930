@@ -1,0 +1,8 @@
+.clickUser {
+  border: 2px solid blue;
+  border-radius: 10px;
+}
+button {
+  width: 100px;
+  height: 40px;
+}

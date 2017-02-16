@@ -1,0 +1,9 @@
+<div class="container">
+  <app-user-card *ngFor="let user of users"
+    [user]="user"
+    (onDelete) = "deleteUser($event)"
+    (onSelect) = "selectUser($event)"
+    >
+    
+  </app-user-card>
+</div>

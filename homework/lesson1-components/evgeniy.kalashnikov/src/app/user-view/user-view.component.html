@@ -1,0 +1,22 @@
+  <div class="panel panel-info" [class.marked]="isMarked" (click) = "mark()">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{user.fullName}}</h3>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class=" col-md-9 col-lg-9 ">
+          <table class="table table-user-information">
+            <tbody>
+            <tr><td>Дата рождения</td><td>{{user.birthdate}}</td></tr>
+            <tr><td>Пол</td><td>{{user.gender}}</td></tr>
+            <tr><td>Адрес</td><td>{{user.address}}</td></tr>
+            <tr><td>Email</td><td><a href="mailto:{{user.email}}">{{user.email}}</a></td>
+            </tbody>
+          </table>
+          <div class="pull-right">
+            <button class = "btn btn-danger pull-right" (click) = "deleteUser(user.id)">delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

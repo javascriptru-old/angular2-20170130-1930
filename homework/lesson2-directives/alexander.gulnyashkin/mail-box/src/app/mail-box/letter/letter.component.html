@@ -1,0 +1,23 @@
+<div class="letter">
+    <div class="letter__header">
+        <p class="letter__from">От кого: </p>
+        <p class="letter__name">
+            <span>Имя: </span>
+            <span [innerHTML]="letter.highlightedName"></span>
+        </p>
+        <p class="letter__email">
+            <span>Email: </span>
+            <span [innerHTML]="letter.highlightedEmail"></span>
+        </p>
+        <p class="letter__date">
+            <span>Дата получения: </span>
+            <span>
+                {{letter.date | timePassed}}<br>
+                <i class="letter__date-full">({{letter.date | date:'fullDate'}})</i>
+            </span>
+        </p>
+    </div>
+    <div class="letter__body">
+        <p [innerHTML]="letter.highlightedContent"></p>
+    </div>
+</div>

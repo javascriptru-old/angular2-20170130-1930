@@ -1,0 +1,15 @@
+.app-name {
+    color: #fff;
+    text-align: center;
+    margin: 30px auto;
+}
+.search {
+    display: block;
+    height: 30px;
+    border: none;
+    outline: none;
+    min-width: 500px;
+    margin: 20px auto;
+    border-radius: 3px;
+    padding: 0 10px;
+}
