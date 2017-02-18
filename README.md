@@ -1,4 +1,4 @@
-angular2-20170130-1930Что подготовить(или уже знать)
+Что подготовить(или уже знать)
 - JavaScript - https://learn.javascript.ru
 - EcmaScript2015 - https://learn.javascript.ru/es-modern
 - TypeScript - интерфейсы, декораторы(класса, свойства), дженерики и модификаторы доступа
