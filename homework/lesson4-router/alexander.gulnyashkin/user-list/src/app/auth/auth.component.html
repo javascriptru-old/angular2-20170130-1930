@@ -1,0 +1,14 @@
+<div class="auth">
+    <div *ngIf="isError" class="auth__error">
+        <p>Пароль или логин введен не верно!</p>
+    </div>
+    <div class="auth__wrapper">
+        Login:<input name="login" class="auth__input" type="text" #login>
+        Password:<input name="password" class="auth__input" type="password" #password>
+        <a class="auth__button"
+            routerLink="/home"
+            (click)="onAuth(login.value, password.value)">
+            LOG IN
+        </a>
+    </div>
+</div>
