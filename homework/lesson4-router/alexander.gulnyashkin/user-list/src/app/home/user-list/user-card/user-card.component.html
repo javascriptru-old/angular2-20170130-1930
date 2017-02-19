@@ -1,0 +1,5 @@
+<div class="user-card">
+    <p class="user-card__name">{{user.firstName}} {{user.surname}}</p>
+    <img class="user-card__img" *ngIf="user.photo" [src]="user.photo" alt="" width="70" height="70">
+    <p class="user-card__more"><a [routerLink]="'/user/'+user.id">подробнее...</a></p>
+</div>
