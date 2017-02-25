@@ -1,0 +1,43 @@
+<div class="large-2 medium-4 small-6 row card" *ngIf="user">
+  <div class="column">
+    <div class="row">
+      <div class="small-12 column app-padding-5 app-grey-border-bottom">
+        <div class="row align-center">
+          <img class="column align-self-middle orbit-image"
+               [src]="user.photo || 'app/user-list/user-card/default-user.svg'">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column text-center">
+        <h3>{{user.firstName}}</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column text-center">
+        <h3>{{user.surname}}</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column text-center">
+        <h3>{{user.country}}</h3>
+      </div>
+    </div>
+    <div class="row" *ngIf="!accountList">
+      <div class="column text-center">
+        <h5>Загрузка списка аккаунтов...</h5>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column">
+        <div class="row app-padding-5" *ngFor="let account of accountList">
+          <div class="column text-center">
+            <a [href]="account.html_url" target="_blank">
+              <h5>{{account.login}}</h5>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
