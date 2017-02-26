@@ -1,0 +1,22 @@
+<div class="panel panel-info">
+  <div class="panel-heading" [class.selected]="user.selected">
+    <h3 class="panel-title">
+      <a [routerLink]=" '/user/' + userId " routerLinkActive="active">
+        {{ user.firstName }} {{ user.surname }}
+      </a>
+      <div class="pull-right">
+        <span class="badge">{{ user.country }}</span>
+      </div>
+    </h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class=" col-12 ">
+
+        <img *ngIf="user.photo" [src]="user.photo" class="user-photo" alt=""/>
+        <div *ngIf="!user.photo" class="no-photo"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
