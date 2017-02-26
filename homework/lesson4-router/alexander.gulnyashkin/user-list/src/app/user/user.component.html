@@ -1,0 +1,17 @@
+<div class="user">
+    <p class="user__name">{{user.firstName}} {{user.surname}}, {{user.country}}</p>
+    <div class="user__img">
+        <img *ngIf="user.photo" [src]="user.photo" alt="" width="70" height="70">
+        <p *ngIf="!user.photo">Фото нет</p>
+    </div>
+    <div class="user__profiles">
+        <p>Возможные Github профили:</p>
+        <ul *ngIf="user.githubs.length">
+            <li *ngFor="let github of user.githubs">
+                <a [href]="github.url">{{github.login}}</a>
+            </li>
+        </ul>
+        <p *ngIf="!user.githubs.length">Не найдено</p>
+    </div>
+
+</div>

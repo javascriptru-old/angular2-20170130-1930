@@ -39,7 +39,7 @@ export class CurrencyConverterSerivce {
         "THB",
         "TRY",
         "USD",
-        "ZAR"    
+        "ZAR"
   ];
 
   constructor() { }
@@ -51,6 +51,7 @@ export class CurrencyConverterSerivce {
     if (currency &&
         typeof sourceUnit == "string" && this.availableUnits.indexOf(sourceUnit.toUpperCase()) >=0 &&
         typeof destinationUnit == "string" && this.availableUnits.indexOf(destinationUnit.toUpperCase()) >=0) {
+
           fetch(`http://api.fixer.io/latest?base=${sourceUnit}&symbols=${destinationUnit}`)
                   .then(responce => responce.json())
                   .then(data => {
@@ -58,5 +59,5 @@ export class CurrencyConverterSerivce {
                     this.resultUnit = destinationUnit;
                   });
         }
-  } 
+  }
 }

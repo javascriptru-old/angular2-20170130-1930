@@ -52,5 +52,4 @@ public deleteUser(user) :void{
   this.users.splice(index, 1);
 }
 
-
 }

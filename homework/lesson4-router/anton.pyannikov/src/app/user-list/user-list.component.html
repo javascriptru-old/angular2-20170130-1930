@@ -1,0 +1,21 @@
+<div class="small-3 row" style="height: 100vh">
+  <div class="column">
+    <div class="row">
+      <div class="column button primary" (click)="refreshUserList()">Обновить список пользователей</div>
+    </div>
+    <div class="row text-center" *ngIf="!userList">
+      <div class="column text-center">
+        <h3>Список пуст</h3>
+      </div>
+    </div>
+    <div class="row" *ngIf="userList" style="height: 90%; overflow: auto">
+      <div class="column">
+        <div class="row" *ngFor="let user of userList, let id = index">
+          <div class="column text-center">
+            <a routerLink="/user/{{id}}"><h3>{{user.firstName}} {{user.surname}}</h3></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

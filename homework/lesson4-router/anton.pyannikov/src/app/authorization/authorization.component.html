@@ -1,0 +1,13 @@
+<div class="small-3 row" style="height: 100vh;">
+  <form #loginForm="ngForm" class="column align-self-middle card" style="padding: 10px 5px">
+    <label class="input-group">
+      <span class="input-group-label">Логин</span>
+      <input class="input-group-field" type="text" placeholder="Введите имя..." name="login" (input)="login = $event.target.value" ngModel required>
+    </label>
+    <label class="input-group">
+      <span class="input-group-label">Пароль</span>
+      <input class="input-group-field" type="password" placeholder="Введите фамилию..." name="password" (input)="password = $event.target.value" ngModel required>
+    </label>
+    <button type="button" class="button expanded" (click)="loginForm.valid && aaa()">Войти</button>
+  </form>
+</div>

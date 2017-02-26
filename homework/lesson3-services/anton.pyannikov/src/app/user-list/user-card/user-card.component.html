@@ -1,0 +1,35 @@
+<div class="small-12 column app-indigo">
+  <div class="row card">
+    <div class="small-12 column app-padding-5 app-grey-border-bottom">
+      <div class="row align-center">
+        <img class="column align-self-middle orbit-image"
+             [src]="user.photo || 'app/user-list/user-card/default-user.svg'">
+      </div>
+    </div>
+    <div class="small-12 column text-center">
+      <h3>{{user.firstName}}</h3>
+    </div>
+    <div class="small-12 column text-center">
+      <h3>{{user.surname}}</h3>
+    </div>
+    <div class="small-12 column text-center">
+      <h3>{{user.country}}</h3>
+    </div>
+    <div class="small-12 column">
+      <div class="row">
+        <div class="small-12 column text-center app-padding-5" *ngFor="let account of accountsList">
+          <a [href]="account.html_url" target="_blank">{{account.login}}</a>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!accountsList" class="small-12 column button alert" (click)="getAccountsList()">
+      Список вероятных аккаунтов
+    </div>
+    <div *ngIf="accountsList" class="small-12 column button alert" (click)="accountsList = null">
+      Скрыть список
+    </div>
+    <div class="small-12 column button primary" (click)="removeUser.emit()">
+      Удалить
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="inbox col-sm-10">
+  <ul class="list-unstyled">
+
+
+    <li class="email-item row unread" *ngFor="let mail of mails | highlightMessage:filterValue">
+      <div class="people col-sm-3">
+        <ul class="mail-icons list-inline">
+          <li>
+            <input type="checkbox" class="mail-select">
+          </li>
+        </ul>
+
+        <span class="people-names">
+          {{mail.sender}}
+        </span>
+      </div><!-- people -->
+
+      <div class="message col-sm-7">
+        <div class="clipper">
+          <h3>
+            {{mail.theme}}
+          </h3>
+          -
+          <p>
+            {{mail.preview}}
+          </p>
+        </div>
+      </div><!-- message -->
+
+      <div class="date col-sm-2">
+        <span class="pull-right">{{mail.date | timeDifference}}</span>
+      </div><!-- date -->
+    </li>
+
+
+  </ul>
+</div>
