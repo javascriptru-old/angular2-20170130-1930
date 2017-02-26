@@ -1,0 +1,44 @@
+
+.panel-heading {
+    cursor: pointer;
+}
+
+.panel-heading.selected {
+    cursor: default;
+
+    color: #d9edf7;
+    background-color: #31708f;
+    border-color: #31708f;
+
+}
+
+.panel-heading.selected .badge {
+    color: #31708f;
+    background-color: #d9edf7;
+}
+
+.no-photo,
+.user-photo {
+    width: 146px;
+    height: 146px;
+    display: block;
+    margin: 0 auto;
+}
+
+
+.no-photo {
+    background-image: url(//i.imgur.com/zSGftLct.png);
+    background-position: 50% 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
+
+.panel-body {
+    text-align: center;
+}
+
+a.active {
+    text-decoration: none;
+    cursor: default;
+}
