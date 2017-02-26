@@ -1,0 +1,20 @@
+<!-- usercard -->
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+    <a [routerLink]="'/users/'+user.userId"user>
+      {{user.firstName}} {{user.surname}}
+    </a>
+    </h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class=" col-md-9 col-lg-9 ">
+        <button (click) = "delete(user)">
+          Delete user
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ...usercard -->

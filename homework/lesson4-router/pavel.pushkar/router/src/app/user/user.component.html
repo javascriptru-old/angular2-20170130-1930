@@ -1,0 +1,51 @@
+<div *ngIf="!user">
+    не подгрузился
+</div>
+
+<div *ngIf = "user" class="container">
+  <div class="row">
+    <div class="col-md-6">  
+      <div class="panel panel-info">
+         <div class="panel-heading">
+            <h3 class="panel-title">
+              {{user.firstName}} {{user.surname}}
+            </h3>
+        </div><!-- ... panel-heading -->
+        <div class="panel-body">
+          <div class="row">
+            <div class=" col-md-9 col-lg-9 ">
+              <table class="table table-user-information">
+                <tbody>
+                  <tr>
+                     <td>User ID</td>
+                      <td>{{user.userId}}</td>
+                  </tr> 
+                  <tr>   
+                      <td>Firstname</td>
+                      <td>{{user.firstName}}</td>
+                  </tr> 
+                  <tr>      
+                      <td>Surname</td>
+                      <td>{{user.surname}}</td>
+                  </tr> 
+                  <tr>      
+                      <td>Photo</td>
+                      <td><img [src]="user.photo" width="100"></td>
+                  </tr> 
+                  <tr>      
+                      <td>Country</td>
+                      <td>{{user.country}}</td>
+                  </tr>
+               </tbody>
+              </table>
+            </div>
+          </div>
+      </div>  <!-- ... panel-body -->
+    </div>
+  </div>
+</div>
+</div>
+
+
+ <a class="btn btn-default" (click)="back()">Back</a>
+
