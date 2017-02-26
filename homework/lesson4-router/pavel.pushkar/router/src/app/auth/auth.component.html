@@ -1,0 +1,17 @@
+<h2>{{message}}</h2>
+
+<form class="form-inline">
+  <div class="form-group">
+    <label for="login">Login:</label>
+    <input class="form-control" name="login" #login>
+  </div>
+  <div class="form-group">
+    <label for="password">Password:</label>
+    <input class="form-control" name="password" type="password" #password>
+  </div>
+
+  <a class="btn btn-default" (click)="onSubmit(login.value, password.value)">Submit</a>
+  <a class="btn btn-default" (click)="logOut(login.value, password.value)">Log Out</a>
+</form>
+
+<p>Подсказка: login: login; password:password</p>
