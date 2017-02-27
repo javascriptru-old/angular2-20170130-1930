@@ -1,0 +1,14 @@
+.deleteBtn {
+    margin-left: 10px;
+    float: right; 
+    color: red; 
+    cursor: pointer;
+}
+
+.viewBtn {
+    margin-left: 10px;
+    float: right; 
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}

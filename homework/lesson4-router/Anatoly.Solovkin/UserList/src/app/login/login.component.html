@@ -1,0 +1,26 @@
+<form class="form-horizontal">
+  <div *ngIf="authError" class="form-group">
+    <div class="col-md-offset-1 col-md-10 alert alert-warning" role="alert">
+      <span>Пользователь с указанными фамилией и именем не существует</span>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-xs-4 col-sm-2 col-md-2 col-lg-2 control-label">Фамилия:</label>
+    <div class="col-xs-4 col-sm-8 col-md-8 col-lg-8">
+        <input type="text" class="form-control" #surname>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-xs-4 col-sm-2 col-md-2 col-lg-2 control-label">Имя:</label>
+    <div class="col-xs-4 col-sm-8 col-md-8 col-lg-8">
+        <input type="text" class="form-control" #firstName>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="button" class="btn btn-default" (click)="authorization(surname.value, firstName.value);">Войти</button>
+    </div>
+  </div>
+</form>
