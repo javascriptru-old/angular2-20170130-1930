@@ -24,7 +24,7 @@ import {AuthService} from "./auth.service";
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRouters)
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     UserService,

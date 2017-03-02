@@ -22,18 +22,24 @@ myAuth.canActivate().subscribe(function (flag) {
 myAuth.tryLogin('test', 'test');
 
 const routes = [
-  { 
-    path: '', 
+  {
+    path: '',
     component: HomeComponent,
     canActivate: [AuthService]
   },
-  { 
+  {
     path: 'user/:userId',
     component: UserComponent,
     resolve: {
       userInfo: UserInfoService
     },
-    canActivate: [AuthService]
+    canActivate: [AuthService],
+    children: [
+      {},
+      {},
+      {},
+      {},
+    ]
   },
   {
     path: 'login',

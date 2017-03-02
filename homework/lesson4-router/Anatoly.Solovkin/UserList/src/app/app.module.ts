@@ -9,7 +9,7 @@ import { AuthService } from '../app/auth.service';
 import{ UserListComponent } from "./user-list/user-list.component"
 import{ UserCardComponent } from "./user-list/user-card/user-card.component"
 import { RouterModule } from "@angular/router"
-import { Routers } from "./routers";
+import { routes } from "./routers";
 import { UserResolveService } from './user-list/user-resolve.service';
 import { LoginComponent } from './login/login.component';
 
@@ -24,12 +24,12 @@ import { LoginComponent } from './login/login.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(Routers)
+    RouterModule.forRoot(routes)
   ],
-  providers: [ 
-    {provide: UserService, useClass: UserService}, 
-    {provide: AuthService, useClass: AuthService}, 
-    UserResolveService 
+  providers: [
+    {provide: UserService, useClass: UserService},
+    {provide: AuthService, useClass: AuthService},
+    UserResolveService
   ],
   bootstrap: [AppComponent]
 })

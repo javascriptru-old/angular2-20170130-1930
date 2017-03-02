@@ -8,7 +8,7 @@ export class AuthService implements CanActivate {
   private loggedIn = Observable.of(false);
 
   public canActivate(): Observable<boolean> {
-    return this.loggedIn;
+    return this._authService.loggedIn;
   };
 
   public tryLogin(login: string, password: string) {
@@ -22,7 +22,7 @@ export class AuthService implements CanActivate {
       this.loggedIn.set(true)
 
       */
-    }    
+    }
   };
 
 }

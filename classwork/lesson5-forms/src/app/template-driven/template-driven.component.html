@@ -1,0 +1,15 @@
+<!--<p console #c="xxx">
+  {{c.log('template-driven works!')}}
+  template-driven works!
+</p>-->
+
+<form #f="ngForm" (ngSubmit)="dosomething(f)">
+
+<input type="text" name="name" [(ngModel)]="name" #m="ngModel" required>
+<input type="submit">
+
+</form>
+
+{{f.valid}}
+
+{{name}}
