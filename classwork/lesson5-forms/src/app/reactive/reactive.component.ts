@@ -15,10 +15,10 @@ export class ReactiveComponent implements OnInit {
     //this.name.valueChanges.subscribe(query => http.get(query))
 
     // this.userForm = this._fb.group({
-    //   name : new FormControl('Bob'),
+    //   name : ['Bob'],
     //   password: this._fb.group({
-    //     password: new FormControl(),
-    //     confirmPassword: new FormControl(),
+    //     password: '',
+    //     confirmPassword: '',
     //   })
     // });
   }
