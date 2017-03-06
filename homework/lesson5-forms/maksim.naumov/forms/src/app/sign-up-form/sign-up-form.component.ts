@@ -1,7 +1,8 @@
+import { UserService } from './../../../../../../lesson3-services/maksim.naumov/services/src/app/user-list/user-service.service';
 import { Router } from '@angular/router';
 import { UsersService } from './../users.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injectable } from '@angular/core';
 import { Observable } from "rxjs/Observable";
 
 import 'rxjs/add/observable/of';
@@ -44,7 +45,7 @@ export class SignUpFormComponent implements OnInit {
       return {error: "weak password"};
     }
 
-    return null; 
+    return null;
   }
 
   checkMail(mail: FormControl): {[key: string]: any} {
@@ -68,9 +69,23 @@ export class SignUpFormComponent implements OnInit {
       lastName: this.form.controls['lastName'].value,
       mail: this.form.controls['email'].value,
       password: this.form.controls['password'].value
-    });    
+    });
 
     this.router.navigateByUrl('/login');
   }
 
+}
+
+@Injectable()
+class ProfileValidators {
+
+  private static _userService;
+
+  constructor(_userService: UserService) {
+    ProfileValidators._userService = _userService;
+  }
+
+  static checkMail(mail: FormControl): {[key: string]: any} {
+    return Observable.of( ProfileValidators._userService.mailExist(mail.value) );
+  }
 }
