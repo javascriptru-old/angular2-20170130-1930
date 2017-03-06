@@ -1,0 +1,28 @@
+<h1>Welcome Back!</h1>
+          
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+  <div class="field-wrap">
+    <label>
+      Email Address<span class="req">*</span>
+    </label>
+    <input type="email" formControlName="email"/>
+  </div>
+
+  <div class="field-wrap">
+    <label>
+      Password<span class="req">*</span>
+    </label>
+    <input type="password" formControlName="password"/>
+  </div>
+
+  <p class="forgot"><a href="">Forgot Password?</a></p>
+
+  <button type="submit" class="button button-block">Log In</button>
+  <div class="field-wrap" *ngIf="!userExist">
+    <label>
+      Такой пользователь не существует.
+    </label>
+  </div>
+
+</form>
