@@ -7,6 +7,17 @@
 # dependencies
 /node_modules
 
+# useless files for pull-request
+/e2e
+/src/assets
+/src/environments
+/src/styles.css
+karma.conf.js
+package.json
+angular-cli.json
+protractor.conf.js
+tslint.json
+
 # IDEs and editors
 /.idea
 .project
