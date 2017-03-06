@@ -1,0 +1,12 @@
+@import "node_modules/compass-sass-mixins/lib/compass";
+@import "node_modules/compass-sass-mixins/lib/compass/css3";
+
+$white: #ffffff;
+$thin: 300;
+
+h1 {
+  text-align:center;
+  color:$white;
+  font-weight:$thin;
+  margin:0 0 40px;
+}

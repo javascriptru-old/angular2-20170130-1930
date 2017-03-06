@@ -1,0 +1,52 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">   
+  <h1>Sign Up for Free</h1>
+
+  <div class="top-row">
+    <div class="field-wrap">
+      <label>
+        First Name<span class="req">*</span>
+      </label>
+      <input type="text" formControlName="firstName"/>
+      <p *ngIf="form.controls['firstName'].touched && form.controls['firstName'].invalid">
+        Поле должно содержать минимум 3 символа.
+      </p>
+    </div>
+
+    <div class="field-wrap">
+      <label>
+        Last Name<span class="req">*</span>
+      </label>
+      <input type="text" formControlName="lastName"/>
+      <p *ngIf="form.controls['lastName'].touched && form.controls['lastName'].invalid">
+        Поле должно содержать минимум 3 символа.
+      </p>
+    </div>
+  </div>
+
+  <div class="field-wrap">
+    <label>
+      Email Address<span class="req">*</span>
+    </label>
+    <input type="email" formControlName="email"/>
+    <p *ngIf="form.controls['email'].touched && form.controls['email'].invalid">
+      Email должен быть введён в следующем формате: address@domen.zone
+    </p>
+  </div>
+
+  <div class="field-wrap">
+    <label>
+      Set A Password<span class="req">*</span>
+    </label>
+    <input type="password" formControlName="password"/>
+    <label *ngIf="form.controls['password'].dirty" [style.color]="getLabelColor()">
+      Password complexity: {{complexity[zxcvbn(form.controls['password'].value).score]}}
+    </label>
+  </div>
+
+  <button type="submit" class="button button-block" [disabled]="form.invalid">Get Started</button>   
+  <div class="field-wrap">       
+    <label *ngIf="form.invalid && form.touched">
+        Пожалуйста, заполните все поля верно.
+    </label>
+  </div>
+</form>
