@@ -1,0 +1,108 @@
+<div class="signup">
+    <h1 class="signup__head">Sign Up for Free</h1>
+    <form [formGroup]="signupForm"
+        (ngSubmit)="signup(signupForm.value)">
+        <div class="signup__top-row">
+            <div class="signup__field-wrap">
+                <!-- Error messages -->
+                <p class="signup__error"
+                    *ngIf="signupForm.controls['firstName'].hasError('minlength')
+                        && (signupForm.controls['firstName'].touched
+                        || error)">
+                    Too short name
+                </p>
+                <p class="signup__error"
+                    *ngIf="signupForm.controls['firstName'].hasError('required')
+                        && (signupForm.controls['firstName'].touched
+                        || error)">
+                    Type a name
+                </p>
+                <!-- Input field -->
+                <input class="signup__input"
+                    type="text"
+                    placeholder="First Name"
+                    [class.error]="!signupForm.controls['firstName'].valid
+                        && (signupForm.controls['firstName'].touched
+                        || error)"
+                    [formControl]="signupForm.controls['firstName']">
+            </div>
+            <div class="signup__field-wrap">
+                <!-- Error messages -->
+                <p class="signup__error"
+                    *ngIf="signupForm.controls['lastName'].hasError('minlength')
+                        && (signupForm.controls['lastName'].touched
+                        || error)">
+                    Too short lastname
+                </p>
+                <p class="signup__error"
+                    *ngIf="signupForm.controls['lastName'].hasError('required')
+                        && (signupForm.controls['lastName'].touched
+                        || error)">
+                    Type a lastname
+                </p>
+                <!-- Input field -->
+                <input class="signup__input"
+                    type="text"
+                    placeholder="Last Name"
+                    [class.error]="!signupForm.controls['lastName'].valid
+                        && (signupForm.controls['lastName'].touched
+                        || error)"
+                    [formControl]="signupForm.controls['lastName']">
+            </div>
+        </div>
+        <div class="signup__field-wrap">
+            <!-- Error messages -->
+            <p class="signup__error"
+                *ngIf="signupForm.controls['email'].hasError('isFreeEmail')
+                    && (signupForm.controls['email'].touched
+                    || error)">
+                The email already exists in database
+            </p>
+            <p class="signup__error"
+                *ngIf="signupForm.controls['email'].hasError('pattern')
+                    && (signupForm.controls['email'].touched
+                    || error)">
+                Type a valid email
+            </p>
+            <p class="signup__error"
+                *ngIf="signupForm.controls['email'].hasError('required')
+                    && (signupForm.controls['email'].touched
+                    || error)">
+                Type a email
+            </p>
+            <!-- Input field -->
+            <input class="signup__input"
+                type="email"
+                placeholder="Email Address"
+                [class.error]="!signupForm.controls['email'].valid
+                    && (signupForm.controls['email'].touched
+                    || error)"
+                [formControl]="signupForm.controls['email']">
+        </div>
+        <div class="signup__field-wrap">
+            <p [class]="'signup__error ' + passwordSafety[passwordScore].toLowerCase()"
+                *ngIf="signupForm.controls['password'].dirty
+                    || error">
+                {{passwordSafety[passwordScore]}} password
+            </p>
+            <p class="signup__error"
+                *ngIf="signupForm.controls['password'].hasError('required')
+                    && (signupForm.controls['password'].touched
+                    || error)">
+                Type a password
+            </p>
+            <input class="signup__input"
+                type="password"
+                name="password"
+                placeholder="Set a Password"
+                [class.error]="!signupForm.controls['password'].valid
+                    && (signupForm.controls['password'].touched
+                    || error)"
+                [formControl]="signupForm.controls['password']">
+        </div>
+        <button type="submit"
+            class="signup__button">
+            Get Started
+        </button>
+    </form>
+</div>

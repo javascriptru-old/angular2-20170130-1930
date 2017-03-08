@@ -1,0 +1,29 @@
+<div class="login">
+    <h1 class="login__head">Welcome Back!</h1>
+    <form [formGroup]="loginForm"
+        (ngSubmit)="login(loginForm.value['email'], loginForm.value['password'])">
+        <div class="login__field-wrap">
+            <p class="login__error"
+                *ngIf="error">
+                Pair login / password is not correct
+            </p>
+            <input class="login__input"
+                [class.error]="error"
+                type="email"
+                placeholder="Email Address"
+                (input)="input()"
+                [formControl]="loginForm.controls['email']">
+        </div>
+        <div class="login__field-wrap">
+            <input class="login__input"
+                [class.error]="error"
+                type="password"
+                placeholder="Password"
+                (input)="input()"
+                [formControl]="loginForm.controls['password']">
+        </div>
+        <p class="login__forgot">Forgot Password?</p>
+        <button type="submit"
+            class="login__button">Log In</button>
+    </form>
+</div>
