@@ -1,0 +1,114 @@
+$white: #ffffff;
+$main: #1ab188;
+$main-dark: darken($main, 5%);
+$gray-light: #a0b3b0;
+$thin: 300;
+$bold: 600;
+
+
+.signup {
+}
+.signup__head {
+    margin: 0 0 40px;
+
+    color: $white;
+    font-weight: $thin;
+    text-align: center;
+}
+.signup__top-row {
+    &:after {
+        display: table;
+        clear: both;
+        content: "";
+    }
+    > .signup__field-wrap {
+        float: left;
+        margin-right: 4%;
+        width: 48%;
+        &:last-child {
+            margin: 0;
+        }
+    }
+}
+.signup__field-wrap {
+    margin-bottom: 40px;
+    position: relative;
+}
+.signup__input {
+    display: block;
+    height: 100%;
+    padding: 5px 10px;
+    width: 100%;
+
+    border: 1px solid $gray-light;
+    border-radius: 0;
+
+    background: none;
+    background-image: none;
+
+    color: $white;
+    font-size: 22px;
+
+    transition: border-color .25s ease, box-shadow .25s ease;
+
+    &:focus {
+        outline: 0;
+        border-color: $main;
+    }
+}
+.signup__input.error {
+    border-color: #B11A1A;
+}
+.signup__error {
+    left: 0;
+    position: absolute;
+    top: -45px;
+
+    color: #B11A1A;
+
+    visibility: hidden;
+}
+.signup__error:last-of-type {
+    visibility: visible;
+}
+.signup__error.weak {
+    color: #E86B2E;
+}
+.signup__error.poor {
+    color: #E8BE2E;
+}
+.signup__error.middle {
+    color: #E8DD2E;
+}
+.signup__error.strong {
+    color: #C7E82E;
+}
+.signup__error.very.strong {
+    color: #1AB188;
+}
+.signup__button {
+    display: block;
+    padding: 15px 0;
+    width: 100%;
+
+    border: 0;
+    border-radius: 0;
+
+    background: $main;
+
+    color: $white;
+    font-size: 2rem;
+    font-weight: $bold;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+
+    cursor: pointer;
+    outline: none;
+    transition: all.5s ease;
+    -webkit-appearance: none;
+
+    &:hover,
+    &:focus {
+        background: $main-dark;
+    }
+}

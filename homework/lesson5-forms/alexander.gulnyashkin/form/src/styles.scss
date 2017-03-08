@@ -1,0 +1,18 @@
+$body-bg: #c1bdba;
+$main: #1ab188;
+$main-dark: darken($main, 5%);
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-y: scroll;
+}
+
+body {
+    background: $body-bg;
+    font-family: 'Titillium Web', sans-serif;
+}

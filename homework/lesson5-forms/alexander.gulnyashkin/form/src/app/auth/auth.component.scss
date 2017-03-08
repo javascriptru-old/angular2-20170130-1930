@@ -1,0 +1,56 @@
+$form-bg: #13232f;
+$white: #ffffff;
+$main: #1ab188;
+$main-dark: darken($main, 5%);
+$gray-light: #a0b3b0;
+$br: 4px;
+
+.form {
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 600px;
+
+    border-radius: $br;
+
+    background: rgba($form-bg, .9);
+
+    box-shadow: 0 4px 10px 4px rgba($form-bg, .3);
+}
+.form__tab-group {
+    padding: 0;
+    margin: 0 0 40px 0;
+    list-style: none;
+    &:after {
+        display: table;
+        clear: both;
+        content: "";
+    }
+    li {
+        display: block;
+        float: left;
+        padding: 15px;
+        width: 50%;
+
+        background: rgba($gray-light, .25);
+
+        color: $gray-light;
+        font-size: 20px;
+        text-align: center;
+        text-decoration: none;
+
+        cursor: pointer;
+        transition: .5s ease;
+
+        &:hover {
+            background: $main-dark;
+            color: $white;
+        }
+    }
+    li.active {
+        background: $main;
+        color: $white;
+    }
+}
+.form__tab-content > div:last-child {
+    display: none;
+}
