@@ -18,3 +18,13 @@ export class DelayDirective implements OnInit{
   }
 
 }
+
+/*
+<div *my="delay"> </div>
+
+<template [my]="delay">
+  <div> </div>
+</template>
+
+
+ */
